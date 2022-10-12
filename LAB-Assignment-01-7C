@@ -1,0 +1,172 @@
+package mylabactivity;
+import java.util.*;
+class VehicalActivities{
+    public void makeMyVehical(String vehical){
+        System.out.println(vehical+"\t"+"has made");
+    }
+    public void Drive(String vehical){
+        System.out.println(vehical+"\t"+"is drive");
+    }
+    public void FourDrive(){
+        System.out.println("Drive 4w is Working only for Jeeb");
+    }
+     public void Ride(String vehical){
+        System.out.println(vehical+"\t"+"is Ride");
+    }
+      public void Book(String vehical){
+        System.out.println(vehical+"\t"+"has booked");
+    }
+    
+}
+class Vehical extends VehicalActivities{
+    int wheelCount;
+    int PessengerCount;
+     Vehical(int wheel, int pessenger){
+        this.wheelCount = wheel;
+        this.PessengerCount = pessenger;
+    }
+  
+    public void wheelCount(){
+        System.out.println("the total wheels are: "+this.wheelCount);
+    }
+    public void pessengerCount(){
+        System.out.println("the total Passengers are: "+this.PessengerCount);
+    }
+}
+
+class Car{
+    public void carActivities(){
+        Vehical ob = new Vehical(4,6);
+    ob.wheelCount();
+    ob.pessengerCount();
+    ob.makeMyVehical("Sevike car");
+    ob.Drive("Sevike Car");
+    
+    }
+    
+}
+class Jeep{
+    public void jeepActivities(){
+    Vehical ob = new Vehical(4,10);
+    ob.wheelCount();
+    ob.pessengerCount();
+    ob.makeMyVehical("Jeep car");
+    ob.Drive("Jeep Car");
+    ob.FourDrive();
+    }
+    
+    
+}
+class Bike{
+    public void bikeActivities(){
+    Vehical ob = new Vehical(2,2);
+    ob.wheelCount();
+    ob.pessengerCount();
+    ob.makeMyVehical("Bike");
+    ob.Ride("Bike");
+    
+    }
+    
+    
+}
+class CabinVehical{
+    public void cabinVehicalActivities(){
+    Vehical ob = new Vehical(4,6);
+    ob.wheelCount();
+    ob.pessengerCount();
+    ob.Drive("Cabin ");
+    
+    }    
+    
+}
+class OpenRideVehical{
+    public void openRideVehicalActivities(){
+    Vehical ob = new Vehical(4,8);
+    ob.pessengerCount();
+    ob.wheelCount();
+    ob.Ride("Open Ride ");
+    
+    }    
+    
+}
+class CargoTruck{
+    int valoum;
+    CargoTruck(int v){
+        this.valoum = v;
+    }
+    public void cargoTruckActivities(){
+    Vehical ob = new Vehical(10,8);
+    ob.wheelCount();
+    ob.Book("Cargo Truck");
+    System.out.println("Total Volum OF the CargoTruck is"+"\t"+volum()+"tons");    
+    }    
+    public int volum(){
+        return this.valoum;
+    }
+    
+}
+class Taxi{
+    public void taxiActivities(){
+    Vehical ob = new Vehical(4,5);
+    ob.pessengerCount();
+    ob.wheelCount();
+    ob.Book("Taxi");
+    }    
+    
+}
+
+
+
+public class MyLabTask {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+System.out.println("""
+                   Choose Your Vehical
+                   press 1 for Car
+                   press 2 for Jeep
+                   press 3 for Bike
+                   press 4 for Cabin Vehical
+                   press 5 for Open Ride Vehical
+                   press 6 for Cargo Trcuk
+                   press 7 for Taxi
+                   """);
+                         String myclass = sc.next();
+                         if(myclass.contentEquals("1")){
+                             Car obj = new Car();
+                             obj.carActivities();
+                         }
+                         else if(myclass.contentEquals("2")){
+                             Jeep obj = new Jeep();
+                             obj.jeepActivities();
+                         }
+                         else if(myclass.contentEquals("3")){
+                             Bike obj = new Bike();
+                             obj.bikeActivities();
+                         }
+                        else if(myclass.contentEquals("4")){
+                             CabinVehical obj = new CabinVehical();
+                             obj.cabinVehicalActivities();
+                         }
+                        else if(myclass.contentEquals("5")){
+                             OpenRideVehical obj = new OpenRideVehical();
+                             obj.openRideVehicalActivities();
+                         }
+                        else if(myclass.contentEquals("6")){
+                             CargoTruck obj1 = new CargoTruck(500);
+                             obj1.cargoTruckActivities();
+                         }
+                         else if(myclass.contentEquals("7")){
+                             Taxi obj = new Taxi();
+                             obj.taxiActivities();
+                         }
+                         else {
+                             System.out.println("You Selected Nothing");
+                         }
+
+        
+        
+    }
+    
+}
+
